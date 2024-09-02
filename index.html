@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ジェームズ・ブライドルの『人間以外の知性』読書感想文</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=BIZ+UDMincho&family=Shippori+Mincho+B1&family=Tsukimi+Rounded&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap');
 
         :root {
             --neon-green: #39FF14;
@@ -18,7 +19,7 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Tsukimi Rounded', 'からかぜ', sans-serif;
+            font-family: 'Tsukimi Rounded', sans-serif;
             font-size: 4px;
             letter-spacing: -0.5px;
             line-height: 1.2;
@@ -44,21 +45,30 @@
             width: 60%;
             margin: 0 auto;
             padding: 1rem;
-            background-color: rgba(0, 0, 0, 0.7);
-            min-height: 100vh;
+            position: relative;
+            z-index: 2;
         }
 
-        .window {
-            border: 1px solid var(--electric-blue);
-            border-radius: 5px;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 0 10px var(--hot-pink);
-            transform: skew(-2deg);
+        .text-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.1;
+            font-size: 2px;
+            line-height: 1;
+            white-space: nowrap;
+            overflow: hidden;
         }
+
+        .text-layer-1 { color: var(--electric-blue); }
+        .text-layer-2 { color: var(--hot-pink); top: 1px; left: 1px; }
 
         h1, h2 {
-            font-family: 'BIZ UDMincho', serif;
+            font-family: 'Gamja Flower', cursive;
             text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--electric-blue), 0 0 30px var(--hot-pink);
             animation: neonFlicker 3s infinite;
             font-weight: 900;
@@ -94,48 +104,13 @@
             }
         }
 
-        .glitch {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            clip: rect(0, 900px, 0, 0);
-        }
-
-        .glitch::before {
-            left: 2px;
-            text-shadow: -1px 0 var(--hot-pink);
-            animation: glitch-anim-1 2s infinite linear alternate-reverse;
-        }
-
-        .glitch::after {
-            left: -2px;
-            text-shadow: 1px 0 var(--electric-blue);
-            animation: glitch-anim-2 3s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-anim-1 {
-            0% { clip: rect(10px, 9999px, 35px, 0); }
-            25% { clip: rect(40px, 9999px, 15px, 0); }
-            50% { clip: rect(25px, 9999px, 3px, 0); }
-            75% { clip: rect(45px, 9999px, 20px, 0); }
-            100% { clip: rect(5px, 9999px, 40px, 0); }
-        }
-
-        @keyframes glitch-anim-2 {
-            0% { clip: rect(30px, 9999px, 15px, 0); }
-            25% { clip: rect(5px, 9999px, 35px, 0); }
-            50% { clip: rect(45px, 9999px, 25px, 0); }
-            75% { clip: rect(10px, 9999px, 40px, 0); }
-            100% { clip: rect(20px, 9999px, 5px, 0); }
+        .window {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--electric-blue);
+            border-radius: 5px;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 10px var(--hot-pink);
         }
 
         .youtube-embed {
@@ -158,13 +133,15 @@
     </style>
 </head>
 <body>
+    <div class="text-layer text-layer-1"></div>
+    <div class="text-layer text-layer-2"></div>
     <div class="content">
         <div class="window">
-            <h1 class="glitch" data-text="ジェームズ・ブライドルの『人間以外の知性』読書感想文">ジェームズ・ブライドルの『人間以外の知性』読書感想文</h1>
+            <h1>ジェームズ・ブライドルの『人間以外の知性』読書感想文</h1>
         </div>
 
         <div class="window">
-            <h2 class="glitch" data-text="目次">目次</h2>
+            <h2>目次</h2>
             <ul>
                 <li><a href="#intro">はじめに：人間中心主義への問い</a></li>
                 <li><a href="#definition">知性の定義と人間性の再考</a></li>
@@ -177,25 +154,25 @@
         </div>
 
         <div class="window">
-            <h2 class="glitch" data-text="BGM">BGM</h2>
+            <h2>BGM</h2>
             <p>米津玄師 POST HUMAN 1時間耐久 【高音質】</p>
             <iframe class="youtube-embed" src="https://www.youtube.com/embed/4r6SGi38ZmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
         <div class="window">
-            <h2 id="intro" class="glitch" data-text="はじめに：人間中心主義への問い">はじめに：人間中心主義への問い</h2>
+            <h2 id="intro">はじめに：人間中心主義への問い</h2>
             <p>「人間には知性がある」となにげなく言うとき、私たちは言外に「人間にのみ知性があり、人間以外には知性がない」と考えてしまいます。人間中心主義に対する批判が世の中にありふれるようになり、「またか」と思わせるテーマの話かもしれません。しかし、そもそもその批判の対象になっている「人間」とは何なのでしょうか。</p>
         </div>
 
-        <!-- 以下、同様に他のセクションも追加 -->
-
         <div class="window">
-            <h2 id="uncertainty" class="glitch" data-text="未来の不確実性：予測不可能な知性の破壊">未来の不確実性：予測不可能な知性の破壊</h2>
-            <p>つまるところ、技術楽観論にすぎない、とか、無責任な空想じゃないか、と本書を退けることは簡単かもしれません。それでもなお、予測不可能な未来だけが私とあなたの前にひらけているのです。私とあなたの知性は、予測不可能な確率で突然に破壊されるでしょう。予測できないから、私もあなたも「そのとき」が永遠に来ないような気がしているだけなのです。そうだとしたら、知性の予測不可能性を組み込んだ社会、そのような考え方、そのような「在り方」について考えてみるのは無駄なことではないと言えるのではないでしょうか。また、それは単に有益なだけではなく、予測の檻の外に開放されるような、朗らかで楽しい想像なのです。</p>
+            <h2 id="definition">知性の定義と人間性の再考</h2>
+            <p>知性があるものが人間なのだとしたら、知的な活動を始める前の新生児や、先天的後天的に知的障害を持つようになった人、痴呆症の老人は「人間ではない」のでしょうか。たしかにそのように話す声を私たちは聞いたことがあります。それは自分の口から発されたものだったかもしれません。では、この、何かを聞いたり、何かを言ったりする私たちは、いまこれを読んでいるあなたは、知性を持った人間なのでしょうか。それは疑い得ない、と私とあなたは言うかもしれません。では、その状態はいつまで続くのでしょうか。この、知性の持続性とその限界について考える助けになるのが今回、感想を書くことにしたジェームズ・ブライドルの『人間以外の知性』です。</p>
         </div>
 
+        <!-- 他のセクションも同様に追加 -->
+
         <div class="window">
-            <h2 class="glitch" data-text="参考URL">参考URL</h2>
+            <h2>参考URL</h2>
             <ul>
                 <li><a href="https://www.jamesbridle.com/books/ways-of-being">James Bridle / Ways of Being</a></li>
                 <li><a href="https://www.goodreads.com/book/show/58772732-ways-of-being">Ways of Being: Animals, Plants, Machines: The Search for a Planetary Intelligence by James Bridle | Goodreads</a></li>
@@ -203,7 +180,7 @@
         </div>
 
         <div class="window">
-            <h2 class="glitch" data-text="使用したサービス">使用したサービス</h2>
+            <h2>使用したサービス</h2>
             <ul>
                 <li>Perplexity</li>
                 <li>Gemini</li>
@@ -213,5 +190,23 @@
             </ul>
         </div>
     </div>
+
+    <script>
+        function fillBackgroundWithText() {
+            const content = document.body.innerText;
+            const layers = document.querySelectorAll('.text-layer');
+            layers.forEach(layer => {
+                layer.innerText = content.repeat(1000);
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            document.querySelector('.text-layer-1').style.transform = `translateY(${scrollY * 0.5}px)`;
+            document.querySelector('.text-layer-2').style.transform = `translateY(${scrollY * 0.3}px)`;
+        });
+
+        window.addEventListener('load', fillBackgroundWithText);
+    </script>
 </body>
 </html>
