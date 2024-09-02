@@ -84,7 +84,7 @@
         }
 
         h2 {
-            font-size: 8vw;
+            font-size: 5vw;
             line-height: 0.9;
             margin-top: 1rem;
             margin-bottom: 0.5rem;
@@ -265,3 +265,8 @@
             document.querySelector('.text-layer-1').style.transform = `translateY(${scrollY * 0.5}px)`;
             document.querySelector('.text-layer-2').style.transform = `translateY(${scrollY * 0.3}px)`;
         });
+
+        window.addEventListener('load', fillBackgroundWithText);
+    </script>
+</body>
+</html>
