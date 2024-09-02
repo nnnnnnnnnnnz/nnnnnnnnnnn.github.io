@@ -3,29 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ジェームズ・ブライドル『人間以外の知性』読書感想文</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <title>ジェームズ・ブライドルの『人間以外の知性』読書感想文</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=BIZ+UDMincho&family=Shippori+Mincho+B1&family=Tsukimi+Rounded&display=swap');
+
+        :root {
+            --neon-green: #39FF14;
+            --electric-blue: #00FFFF;
+            --hot-pink: #FF007F;
+            --dark-purple: #5D3FD3;
+            --metallic-silver: #C0C0C0;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Tsukimi Rounded', 'からかぜ', sans-serif;
+            font-size: 4px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #ffffff;
+            background-color: #000;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
         body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background: linear-gradient(135deg, #f6f8fa 0%, #e9ecef 100%);
+            background: linear-gradient(45deg, var(--neon-green), var(--electric-blue), var(--hot-pink), var(--dark-purple));
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
         }
-        
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        
+
+        .content {
+            width: 60%;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
+        }
+
+        .window {
+            border: 1px solid var(--electric-blue);
+            border-radius: 5px;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 10px var(--hot-pink);
+            transform: skew(-2deg);
+        }
+
+        h1, h2 {
+            font-family: 'BIZ UDMincho', serif;
+            text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--electric-blue), 0 0 30px var(--hot-pink);
+            animation: neonFlicker 3s infinite;
+            font-weight: 900;
+            margin: 0;
+            padding: 0;
+            transform: scale(1, 1.5) rotate(-1deg);
+        }
+
+        h1 {
+            font-size: 20vw;
+            line-height: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 10vw;
+            line-height: 0.9;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p, ul {
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 3px var(--electric-blue);
+        }
+
+        @keyframes neonFlicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--electric-blue), 0 0 30px var(--hot-pink);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+
         .glitch {
             position: relative;
-            color: #000;
-            font-size: 4rem;
-            letter-spacing: .5em;
-            animation: glitch-skew 1s infinite linear alternate-reverse;
+            overflow: hidden;
         }
-        
+
         .glitch::before,
         .glitch::after {
             content: attr(data-text);
@@ -34,140 +107,111 @@
             left: 0;
             width: 100%;
             height: 100%;
+            clip: rect(0, 900px, 0, 0);
         }
-        
+
         .glitch::before {
             left: 2px;
-            text-shadow: -2px 0 #ff00c1;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
+            text-shadow: -1px 0 var(--hot-pink);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
         }
-        
+
         .glitch::after {
             left: -2px;
-            text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
-            animation: glitch-anim2 1s infinite linear alternate-reverse;
+            text-shadow: 1px 0 var(--electric-blue);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
         }
-        
-        @keyframes glitch-anim {
-            0% { clip: rect(10px, 9999px, 31px, 0); transform: skew(0.55deg); }
-            5% { clip: rect(70px, 9999px, 71px, 0); transform: skew(0.03deg); }
-            10% { clip: rect(29px, 9999px, 40px, 0); transform: skew(0.33deg); }
-            /* ... 省略 ... */
-            100% { clip: rect(67px, 9999px, 86px, 0); transform: skew(0.63deg); }
+
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(10px, 9999px, 35px, 0); }
+            25% { clip: rect(40px, 9999px, 15px, 0); }
+            50% { clip: rect(25px, 9999px, 3px, 0); }
+            75% { clip: rect(45px, 9999px, 20px, 0); }
+            100% { clip: rect(5px, 9999px, 40px, 0); }
         }
-        
-        @keyframes glitch-anim2 {
-            0% { clip: rect(65px, 9999px, 99px, 0); transform: skew(0.03deg); }
-            5% { clip: rect(90px, 9999px, 68px, 0); transform: skew(0.6deg); }
-            10% { clip: rect(28px, 9999px, 46px, 0); transform: skew(0.91deg); }
-            /* ... 省略 ... */
-            100% { clip: rect(50px, 9999px, 35px, 0); transform: skew(0.34deg); }
+
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(30px, 9999px, 15px, 0); }
+            25% { clip: rect(5px, 9999px, 35px, 0); }
+            50% { clip: rect(45px, 9999px, 25px, 0); }
+            75% { clip: rect(10px, 9999px, 40px, 0); }
+            100% { clip: rect(20px, 9999px, 5px, 0); }
         }
-        
-        @keyframes glitch-skew {
-            0% { transform: skew(-0.5deg); }
-            10% { transform: skew(-1deg); }
-            20% { transform: skew(0.8deg); }
-            /* ... 省略 ... */
-            100% { transform: skew(0.2deg); }
+
+        .youtube-embed {
+            width: 100%;
+            height: 150px;
+            margin-top: 1rem;
+            transform: skew(-2deg);
+            box-shadow: 0 0 10px var(--hot-pink);
         }
-        
-        .gradient-text {
-            background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+
+        a {
+            color: var(--neon-green);
+            text-decoration: none;
         }
-        
-        .wavy {
-            position: relative;
+
+        a:hover {
+            color: var(--hot-pink);
+            text-shadow: 0 0 5px var(--hot-pink);
         }
-        
-        .wavy span {
-            position: relative;
-            display: inline-block;
-            animation: wave 2s infinite;
-            animation-delay: calc(.1s * var(--i));
-        }
-        
-        @keyframes wave {
-            0%, 40%, 100% {
-                transform: translateY(0);
-            }
-            20% {
-                transform: translateY(-20px);
-            }
-        }
-        
-        .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
-        .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 leading-normal tracking-normal">
-    <header class="bg-white shadow-lg">
-        <div class="container mx-auto px-4 py-12">
-            <h1 class="glitch text-4xl font-bold mb-4" data-text="人間以外の知性">人間以外の知性</h1>
-            <p class="text-xl italic">ジェームズ・ブライドル著</p>
+<body>
+    <div class="content">
+        <div class="window">
+            <h1 class="glitch" data-text="ジェームズ・ブライドルの『人間以外の知性』読書感想文">ジェームズ・ブライドルの『人間以外の知性』読書感想文</h1>
         </div>
-    </header>
 
-    <nav class="bg-gray-900 text-white p-4 sticky top-0 z-50">
-        <div class="container mx-auto">
-            <ul class="flex space-x-4 justify-center">
-                <li><a href="#intro" class="hover:text-blue-400 transition duration-300">はじめに</a></li>
-                <li><a href="#definition" class="hover:text-blue-400 transition duration-300">知性の定義</a></li>
-                <li><a href="#overview" class="hover:text-blue-400 transition duration-300">概要</a></li>
-                <li><a href="#thinking" class="hover:text-blue-400 transition duration-300">思考法</a></li>
-                <li><a href="#art" class="hover:text-blue-400 transition duration-300">アート作品</a></li>
-                <li><a href="#title" class="hover:text-blue-400 transition duration-300">タイトルの意味</a></li>
-                <li><a href="#future" class="hover:text-blue-400 transition duration-300">未来の不確実性</a></li>
+        <div class="window">
+            <h2 class="glitch" data-text="目次">目次</h2>
+            <ul>
+                <li><a href="#intro">はじめに：人間中心主義への問い</a></li>
+                <li><a href="#definition">知性の定義と人間性の再考</a></li>
+                <li><a href="#overview">『人間以外の知性』の概要</a></li>
+                <li><a href="#multiple-paths">複数の道筋：ブライドルの思考法</a></li>
+                <li><a href="#unpredictability">アート作品に見る予測不可能性</a></li>
+                <li><a href="#double-meaning">タイトルの二重の意味：『在り方』と軌跡</a></li>
+                <li><a href="#uncertainty">未来の不確実性：予測不可能な知性の破壊</a></li>
             </ul>
         </div>
-    </nav>
 
-    <main class="container mx-auto mt-8 px-4">
-        <section id="bgm" class="mb-16">
-            <h2 class="text-3xl font-bold mb-4 gradient-text">BGM</h2>
-            <p class="mb-4 text-xl">米津玄師 POST HUMAN 1時間耐久 【高音質】</p>
-            <div class="embed-container">
-                <iframe src="https://www.youtube.com/embed/4r6SGi38ZmA" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
+        <div class="window">
+            <h2 class="glitch" data-text="BGM">BGM</h2>
+            <p>米津玄師 POST HUMAN 1時間耐久 【高音質】</p>
+            <iframe class="youtube-embed" src="https://www.youtube.com/embed/4r6SGi38ZmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
-        <section id="intro" class="mb-16">
-            <h2 class="text-3xl font-bold mb-4 gradient-text">はじめに：人間中心主義への問い</h2>
-            <p class="text-lg leading-relaxed">「人間には知性がある」となにげなく言うとき、私たちは言外に「人間にのみ知性があり、人間以外には知性がない」と考えてしまいます。人間中心主義に対する批判が世の中にありふれるようになり、「またか」と思わせるテーマの話かもしれません。しかし、そもそもその批判の対象になっている「人間」とは何なのでしょうか。</p>
-        </section>
+        <div class="window">
+            <h2 id="intro" class="glitch" data-text="はじめに：人間中心主義への問い">はじめに：人間中心主義への問い</h2>
+            <p>「人間には知性がある」となにげなく言うとき、私たちは言外に「人間にのみ知性があり、人間以外には知性がない」と考えてしまいます。人間中心主義に対する批判が世の中にありふれるようになり、「またか」と思わせるテーマの話かもしれません。しかし、そもそもその批判の対象になっている「人間」とは何なのでしょうか。</p>
+        </div>
 
-        <!-- 以下、各セクションを同様にスタイリング -->
+        <!-- 以下、同様に他のセクションも追加 -->
 
-        <section id="future" class="mb-16">
-            <h2 class="text-3xl font-bold mb-4 gradient-text">未来の不確実性：予測不可能な知性の破壊</h2>
-            <p class="text-lg leading-relaxed">つまるところ、技術楽観論にすぎない、とか、無責任な空想じゃないか、と本書を退けることは簡単かもしれません。それでもなお、予測不可能な未来だけが私とあなたの前にひらけているのです。私とあなたの知性は、予測不可能な確率で突然に破壊されるでしょう。予測できないから、私もあなたも「そのとき」が永遠に来ないような気がしているだけなのです。</p>
-            <p class="text-lg leading-relaxed mt-4">そうだとしたら、知性の予測不可能性を組み込んだ社会、そのような考え方、そのような「在り方」について考えてみるのは無駄なことではないと言えるのではないでしょうか。また、それは単に有益なだけではなく、予測の檻の外に開放されるような、朗らかで楽しい想像なのです。</p>
-        </section>
-    </main>
+        <div class="window">
+            <h2 id="uncertainty" class="glitch" data-text="未来の不確実性：予測不可能な知性の破壊">未来の不確実性：予測不可能な知性の破壊</h2>
+            <p>つまるところ、技術楽観論にすぎない、とか、無責任な空想じゃないか、と本書を退けることは簡単かもしれません。それでもなお、予測不可能な未来だけが私とあなたの前にひらけているのです。私とあなたの知性は、予測不可能な確率で突然に破壊されるでしょう。予測できないから、私もあなたも「そのとき」が永遠に来ないような気がしているだけなのです。そうだとしたら、知性の予測不可能性を組み込んだ社会、そのような考え方、そのような「在り方」について考えてみるのは無駄なことではないと言えるのではないでしょうか。また、それは単に有益なだけではなく、予測の檻の外に開放されるような、朗らかで楽しい想像なのです。</p>
+        </div>
 
-    <footer class="bg-gray-900 text-white mt-12 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-semibold mb-4 gradient-text">参考URL</h2>
-            <ul class="list-disc list-inside">
-                <li><a href="https://www.jamesbridle.com/books/ways-of-being" class="hover:text-blue-400 transition duration-300">James Bridle / Ways of Being</a></li>
-                <li><a href="https://www.goodreads.com/book/show/58772732-ways-of-being" class="hover:text-blue-400 transition duration-300">Ways of Being: Animals, Plants, Machines: The Search for a Planetary Intelligence by James Bridle | Goodreads</a></li>
+        <div class="window">
+            <h2 class="glitch" data-text="参考URL">参考URL</h2>
+            <ul>
+                <li><a href="https://www.jamesbridle.com/books/ways-of-being">James Bridle / Ways of Being</a></li>
+                <li><a href="https://www.goodreads.com/book/show/58772732-ways-of-being">Ways of Being: Animals, Plants, Machines: The Search for a Planetary Intelligence by James Bridle | Goodreads</a></li>
             </ul>
         </div>
-    </footer>
 
-    <script>
-        gsap.from(".glitch", {duration: 1, opacity: 0, y: 50, stagger: 0.2});
-        gsap.from("nav a", {duration: 0.5, opacity: 0, y: 20, stagger: 0.1});
-        gsap.from("section", {duration: 1, opacity: 0, y: 50, stagger: 0.2, scrollTrigger: {
-            trigger: "section",
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-        }});
-    </script>
+        <div class="window">
+            <h2 class="glitch" data-text="使用したサービス">使用したサービス</h2>
+            <ul>
+                <li>Perplexity</li>
+                <li>Gemini</li>
+                <li>BingChat(Copilot, GPT-4)</li>
+                <li>Claude3.5sonnet</li>
+                <li>Notion(NotionAI)</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
