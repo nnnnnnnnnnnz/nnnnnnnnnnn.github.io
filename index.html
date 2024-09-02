@@ -218,11 +218,25 @@
 
 
         <div class="window">
-            <h2>参考URL</h2>
+            <h2>参考URL（AIが、「参考にした」として、もしくはユーザーに「参考にしろ」と提示しているリンク）</h2>
             <ul>
                 <li><a href="https://www.jamesbridle.com/books/ways-of-being">James Bridle / Ways of Being</a></li>
                 <li><a href="https://www.goodreads.com/book/show/58772732-ways-of-being">Ways of Being: Animals, Plants, Machines: The Search for a Planetary Intelligence by James Bridle | Goodreads</a></li>
             </ul>
+
+
+<p>
+ソース: Copilot との会話、 2024/8/31
+(1) James Bridle / Ways of Being. https://www.jamesbridle.com/books/ways-of-being.
+(2) Ways of Being: Animals, Plants, Machines: The Search fo…. https://www.goodreads.com/book/show/58772732-ways-of-being.
+(3) Summary and reviews of Ways of Being by James Bridle .... https://www.bookbrowse.com/bb_briefs/detail/index.cfm/ezine_preview_number/16766/ways-of-being.
+(4) Ways of Being - Google Books. https://books.google.com/books/about/Ways_of_Being.html?id=wr5_EAAAQBAJ.
+(5) Ways of Being: Beyond Human Intelligence by James Bridle. https://app.thestorygraph.com/books/d7a91d08-afff-492b-9408-f43f060a9fc4.
+(6) undefined. https://jamesbridle.com/about.
+</p>
+
+
+
         </div>
 
         <div class="window">
@@ -251,8 +265,3 @@
             document.querySelector('.text-layer-1').style.transform = `translateY(${scrollY * 0.5}px)`;
             document.querySelector('.text-layer-2').style.transform = `translateY(${scrollY * 0.3}px)`;
         });
-
-        window.addEventListener('load', fillBackgroundWithText);
-    </script>
-</body>
-</html>
